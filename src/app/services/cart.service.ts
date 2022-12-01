@@ -29,7 +29,7 @@ export class CartService {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token()}`,
+        Authorization: `Bearer ${environment.token}`,
       },
     });
 
@@ -50,7 +50,7 @@ export class CartService {
       body: JSON.stringify({ size }),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token()}`,
+        Authorization: `Bearer ${environment.token}`,
       },
     });
 
@@ -74,7 +74,7 @@ export class CartService {
       body: JSON.stringify({ size }),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token()}`,
+        Authorization: `Bearer ${environment.token}`,
       },
     });
 
@@ -97,7 +97,7 @@ export class CartService {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token()}`,
+        Authorization: `Bearer ${environment.token}`,
       },
     });
 

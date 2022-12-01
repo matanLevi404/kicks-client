@@ -18,7 +18,7 @@ export class RightColComponent implements OnInit {
   }
 
   refreshPageOnJWTexp() {
-    const token = environment.token();
+    const token = environment.token;
     if (!token) return;
     const tokenDecode = JSON.parse(atob(token.split('.')[1]));
     const timer = tokenDecode.exp * 1000 - Date.now();

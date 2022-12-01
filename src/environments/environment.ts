@@ -1,12 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-// https://kicks-server.onrender.com
 
 export const environment = {
   production: false,
   apiURL: 'http://localhost:1001',
-  token: () => localStorage.getItem('jwt'),
+  token: localStorage.getItem('jwt'),
   ANGULAR_APP_PUBLISHABLE_KEY:
     'pk_test_51M8K6zDb07Qcgu34NfxVkZRs9MxQhZtKacgkGsDTzveSA8Y3DVPlw3RTq9jInGRIEEOwih6GzmPohdDrFqdhRm6j00O6igSdSY',
 };

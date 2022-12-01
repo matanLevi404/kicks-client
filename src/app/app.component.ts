@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this._activatedRoute.params.subscribe((d) => {
-          const token = environment.token();
+          const token = environment.token;
           if (!token) {
             localStorage.setItem('jwt', '');
             this._authService._user.next({
