@@ -19,7 +19,7 @@ export class AccountDropMenuComponent implements OnInit {
   ngOnInit(): void {}
 
   logout() {
-    const token = environment.token;
+    const token = localStorage.getItem('jwt');
     const tokenDecode = JSON.parse(atob(token.split('.')[1]));
     localStorage.setItem('jwt', '');
     this._authService._user.next({

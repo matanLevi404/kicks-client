@@ -1,4 +1,11 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  OnInit,
+  OnDestroy,
+  Renderer2,
+} from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { VariablesService } from 'src/app/variables/variables.service';
 
@@ -7,7 +14,9 @@ import { VariablesService } from 'src/app/variables/variables.service';
   templateUrl: './my-account.component.html',
   styleUrls: ['./my-account.component.css'],
 })
-export class MyAccountComponent implements OnInit {
+export class MyAccountComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject();
+
   avatarSrc: string = '/assets/images/avatar.png';
   avatarRedSrc: string = '/assets/images/avatar-red.png';
 
@@ -16,14 +25,24 @@ export class MyAccountComponent implements OnInit {
 
   status: string;
 
-  user = this._authService.user$;
+  user;
 
   constructor(
     private _renderer: Renderer2,
     private _authService: AuthService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._authService.getUser();
+    this._authService.user$.pipe(takeUntil(this.destroy$)).subscribe((info) => {
+      this.user = info;
+    });
+  }
+
+  ngOnDestroy(): void {
+    // this.subscriptions.forEach((s) => s.unsubscribe());
+    this.destroy$.next(true);
+  }
 
   @HostListener('click')
   do() {

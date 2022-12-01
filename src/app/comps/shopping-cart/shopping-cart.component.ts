@@ -18,7 +18,9 @@ export class ShoppingCartComponent implements OnInit {
 
   constructor(private _cartService: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._cartService.getCart();
+  }
 
   toggleMenu() {
     this.isOpen = !this.isOpen;

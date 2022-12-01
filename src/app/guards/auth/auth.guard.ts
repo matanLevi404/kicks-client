@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const token = environment.token;
+    const token = localStorage.getItem('jwt');
 
     if (!token) {
       this._snackbar.openSnackBar(

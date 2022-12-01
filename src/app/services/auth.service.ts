@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RegisterBody, User } from '../interfaces/interfaces';
-import { VariablesService } from '../variables/variables.service';
 import { CartService } from './cart.service';
 import { SnackbarService } from './snackbar.service';
 
@@ -24,6 +23,17 @@ export class AuthService {
   failedMsg = 'Failed: ';
   successMsg = 'Sucsses: ';
 
+  getUser() {
+    const token = localStorage.getItem('jwt');
+
+    if (!token) return;
+
+    const tokenDecode = JSON.parse(atob(token.split('.')[1]));
+
+    tokenDecode.firstname = 'Hello ' + tokenDecode.firstname;
+    this._user.next(tokenDecode);
+  }
+
   async login(email: string, password: string) {
     const data = await fetch(environment.apiURL + '/login', {
       method: 'POST',
@@ -37,15 +47,14 @@ export class AuthService {
 
     if (res.err) {
       this._snackbar.openSnackBar(this.failedMsg + res.err, 'failed-snackbar');
-      console.log(res);
       return;
     } else {
       this._snackbar.openSnackBar(
         this.successMsg + res.msg,
         'success-snackbar'
       );
-
       localStorage.setItem('jwt', res.accessToken);
+      res.firstname = 'Hello ' + res.firstname;
       this._user.next(res);
       this._cartService.getCart();
       this._router.navigateByUrl('/');
@@ -76,7 +85,5 @@ export class AuthService {
     }
   }
 
-  logout() {
-    localStorage.setItem('jwt', '');
-  }
+  logout() {}
 }

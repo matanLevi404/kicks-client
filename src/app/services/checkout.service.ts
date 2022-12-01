@@ -24,7 +24,7 @@ export class CheckoutService {
       body: JSON.stringify(body),
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token}`,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
     });
 
@@ -47,7 +47,7 @@ export class CheckoutService {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${environment.token}`,
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
     });
 

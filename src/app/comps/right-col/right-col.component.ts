@@ -18,8 +18,10 @@ export class RightColComponent implements OnInit {
   }
 
   refreshPageOnJWTexp() {
-    const token = environment.token;
+    const token = localStorage.getItem('jwt');
+
     if (!token) return;
+
     const tokenDecode = JSON.parse(atob(token.split('.')[1]));
     const timer = tokenDecode.exp * 1000 - Date.now();
 
