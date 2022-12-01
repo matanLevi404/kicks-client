@@ -1,0 +1,17 @@
+<td>
+  <div class="img"><img [src]="item.id.images[0]" alt="" /></div>
+</td>
+<td>{{ item.id.name }}</td>
+<td>{{ item.id._id.substr(item.id._id.length - 4) }}</td>
+<td>{{ item.size }}</td>
+<td class="quantity">
+  <a (click)="pull(item.id._id, item.size)" class="minus btn tooltip"
+    ><i class="fa-sharp fa-solid fa-minus"></i
+  ></a>
+  <div class="amount">{{ item.qt }}</div>
+  <a (click)="push(item.id._id, item.size)" class="plus btn tooltip"
+    ><i class="fa-sharp fa-solid fa-plus"></i
+  ></a>
+</td>
+<td>₪{{ item.id.price }}</td>
+<td>₪{{ item.id.price * item.qt }}</td>

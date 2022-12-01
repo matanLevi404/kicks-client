@@ -1,0 +1,30 @@
+.info {
+  color: #888;
+  padding: 25px 0;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 24px;
+}
+
+.social-ul {
+  list-style: none;
+  color: #fff;
+  display: flex;
+}
+
+.social-ul li {
+  margin: 0 8px;
+}
+
+.social-ul li i {
+  color: #888888;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.social-ul li a:hover > i {
+  color: #d40317;
+}

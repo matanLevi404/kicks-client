@@ -1,0 +1,78 @@
+:host ::ng-deep {
+  @import "swiper/scss";
+  @import "swiper/scss/navigation";
+  @import "swiper/scss/pagination";
+
+  .swiper-pagination-bullet {
+    background-color: #fff !important;
+    border-radius: 0 !important;
+    padding: 5px;
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  .swiper-pagination-bullet:hover {
+    cursor: pointer;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #d40317 !important;
+    border-radius: none !important;
+    padding: 6px;
+  }
+}
+
+.slider {
+  position: relative;
+}
+
+.slider:hover > #js-prev5 {
+  left: 40px;
+  opacity: 1;
+}
+.slider:hover > #js-next5 {
+  right: 40px;
+  opacity: 1;
+}
+
+.slide-btn {
+  position: absolute;
+  background-color: #fff;
+  color: #d40317;
+  padding: 10px;
+  z-index: 99;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.slide-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: -6px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.slide-btn:hover {
+  color: #fff;
+  background-color: #d40317;
+  cursor: pointer;
+}
+
+.slide-btn:hover::after {
+  background-color: #d40317;
+}
+
+#js-prev5 {
+  left: 15px;
+}
+
+#js-next5 {
+  right: 15px;
+}
+
+img {
+  width: 100%;
+}

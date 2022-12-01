@@ -1,0 +1,20 @@
+<div class="nav flex-align page-row flex-justify-between">
+  <div class="box-heading flex-align burger" (click)="openHiddenMenu()">
+    <span>MENU</span>
+  </div>
+  <ul *ngIf="this.open" class="hidden-link-list">
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+    <li><a href="">Terms</a></li>
+    <li><a href="">Special</a></li>
+    <li><a href="">About Us</a></li>
+  </ul>
+  <ul class="link-list flex-align">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+    <li><a routerLink="/features">Our Features</a></li>
+    <li><a href="">Special</a></li>
+    <li><a href="">About Us</a></li>
+  </ul>
+  <app-search></app-search>
+</div>

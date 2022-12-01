@@ -1,0 +1,87 @@
+h1,
+h3 {
+  color: #000000;
+  text-transform: capitalize;
+  font: 500 20px/26px "Roboto", sans-serif;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #292929;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table td {
+  border: 1px solid #e5e5e5;
+}
+
+thead tr td {
+  background: #f8f8f8 none repeat scroll 0 0;
+  color: #262626;
+  font-weight: 600;
+  padding: 10px 15px 10px 15px;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.total-table-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 115px;
+}
+
+.total-table-container::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  display: block;
+  background-color: #e5e5e5;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.total-table {
+  position: absolute;
+  right: 0;
+  border: 1px solid #e5e5e5;
+  border-collapse: collapse;
+}
+
+.total-table td {
+  border: 1px solid #e5e5e5;
+  color: #808080;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  padding: 10px 15px;
+  text-align: right;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.buttons a {
+  padding: 8px 20px;
+  margin: 0;
+}

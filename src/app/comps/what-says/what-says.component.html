@@ -1,0 +1,45 @@
+<div class="box">
+  <div class="box-heading flex-align flex-justify-between">
+    <span>What Says</span>
+    <div class="swipe-nav-box">
+      <div id="js-prev7" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_left </span>
+      </div>
+      <div id="js-next7" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_right </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <swiper
+      id="swiper-7"
+      #swiperSlider
+      [slidesPerView]="1"
+      [navigation]="{
+        nextEl: '#js-next7',
+        prevEl: '#js-prev7'
+      }"
+      [scrollbar]="{ draggable: true }"
+    >
+      <ng-template swiperSlide
+        ><app-what-says-card
+          [userNum]="'1'"
+          [userName]="'Mack Jackno'"
+        ></app-what-says-card
+      ></ng-template>
+      <ng-template swiperSlide
+        ><app-what-says-card
+          [userNum]="'2'"
+          [userName]="'Luies Charls'"
+        ></app-what-says-card
+      ></ng-template>
+      <ng-template swiperSlide
+        ><app-what-says-card
+          [userNum]="'3'"
+          [userName]="'jecob goeckno'"
+        ></app-what-says-card
+      ></ng-template>
+    </swiper>
+  </div>
+</div>

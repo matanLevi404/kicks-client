@@ -1,0 +1,43 @@
+<div class="featured-products products-section">
+  <div class="box-heading flex-center-between">
+    <span>Featured Products</span>
+    <div class="swipe-nav-box">
+      <div id="js-prev2" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_left </span>
+      </div>
+      <div id="js-next2" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_right </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <swiper
+      id="swiper-2"
+      #swiperSlider
+      [slidesPerView]="3"
+      [breakpoints]="{
+        '0': {
+          slidesPerView: 1
+        },
+        '456': { slidesPerView: 2 },
+        '800': { slidesPerView: 3 }
+      }"
+      [navigation]="{
+        nextEl: '#js-next2',
+        prevEl: '#js-prev2'
+      }"
+      [scrollbar]="{ draggable: true }"
+    >
+      <ng-template swiperSlide *ngFor="let product of products">
+        <app-prod-card [product]="product"></app-prod-card>
+      </ng-template>
+      <!-- <ng-template swiperSlide><app-prod-card></app-prod-card></ng-template>
+      <ng-template swiperSlide><app-prod-card></app-prod-card></ng-template>
+      <ng-template swiperSlide><app-prod-card></app-prod-card></ng-template>
+      <ng-template swiperSlide><app-prod-card></app-prod-card></ng-template>
+      <ng-template swiperSlide><app-prod-card></app-prod-card></ng-template>
+      <ng-template swiperSlide><app-prod-card></app-prod-card></ng-template> -->
+    </swiper>
+  </div>
+</div>

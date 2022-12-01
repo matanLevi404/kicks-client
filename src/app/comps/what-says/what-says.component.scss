@@ -1,0 +1,42 @@
+:host ::ng-deep {
+  @import "swiper/scss";
+  @import "swiper/scss/navigation";
+  @import "swiper/scss/pagination";
+}
+
+.box {
+  margin-bottom: 30px;
+  border: 1px solid #f7f7f7;
+}
+
+.box-heading {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Swiper relocate nav next and prev btn */
+.swipe-nav-box {
+  position: relative;
+  display: flex;
+}
+
+.swipe-nav-box div span {
+  font-size: 18px;
+}
+
+#js-prev7,
+#js-next7 {
+  margin: 0 3px;
+  position: static;
+  border: 1px solid;
+}
+
+.swipe-nav-box div:hover {
+  color: #d40317;
+  cursor: pointer;
+}
+
+.swiper-container {
+  border: 1px solid #f2f2f2;
+}
+/* Swiper relocate nav next and prev btn */

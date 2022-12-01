@@ -1,0 +1,55 @@
+.box {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.box-heading {
+  background-color: #d40317;
+  color: #fff;
+}
+
+.box-heading::before {
+  content: "\F0C9";
+  font-family: "FontAwesome";
+  font-size: 17px;
+  font-weight: 500;
+  padding-right: 15px;
+  color: #fff;
+}
+
+.all-department {
+  background-color: #f2f2f2;
+  width: 100%;
+  text-decoration: none;
+  list-style: none;
+  padding: 13px 0 20px 0;
+}
+
+.all-department li {
+  width: 100%;
+  height: 51px;
+  padding: 0 20px;
+}
+
+.all-department li a {
+  background: url("/assets/images/right-arrow.png") no-repeat scroll transparent;
+  background-position: 0 50%;
+  background-size: 8px 8px;
+  font-weight: 500;
+  color: #000;
+  letter-spacing: 0.6px;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding: 15px 5px 15px 30px;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.all-department li a:hover {
+  background: url("/assets/images/right-arrow-red.png") no-repeat scroll
+    transparent;
+  background-position: 0 50%;
+  background-size: 8px 8px;
+  color: #d40317;
+}

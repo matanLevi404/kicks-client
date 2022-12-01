@@ -1,0 +1,47 @@
+<div class="cart">
+  <h1>My Cart</h1>
+  <div class="table-container scroll-bar">
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Image</td>
+          <td>Product Name</td>
+          <td>.Id</td>
+          <td>Size</td>
+          <td>Quantity</td>
+          <td>Unit Price</td>
+          <td>Total</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of (cart | async)?.['cart']"
+          app-cart-item
+          [item]="item"
+        ></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>What would you like to do next?</h3>
+
+  <div class="total-table-container">
+    <table class="total-table">
+      <tbody>
+        <tr>
+          <td class="bold">Sub Total:</td>
+          <td>₪{{((cart| async)?.['subTotal']).toFixed(2)}}</td>
+        </tr>
+        <tr>
+          <td class="bold">Total:</td>
+          <td>₪{{((cart| async)?.['total']).toFixed(2)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="buttons">
+    <a routerLink="/" class="btn">Continue Shopping</a>
+    <a (click)="checkout()" class="btn">Checkout</a>
+  </div>
+</div>

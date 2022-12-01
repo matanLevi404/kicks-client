@@ -1,0 +1,9 @@
+:host ::ng-deep {
+  @import "swiper/scss";
+  @import "swiper/scss/navigation";
+  @import "swiper/scss/pagination";
+}
+
+.banners-slider {
+  padding: 25px 15px 30px;
+}

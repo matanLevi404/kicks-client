@@ -1,0 +1,46 @@
+.page-container {
+  padding: 0 5px;
+  display: flex;
+  background-color: #fff;
+  position: relative;
+}
+
+app-left-col {
+  padding-top: 30px;
+  margin-left: 10px;
+  width: 21.6%;
+}
+
+app-site-layout {
+  padding-top: 30px;
+  margin-right: 10px;
+  width: 71.7%;
+}
+
+@media screen and (max-width: 1000px) {
+  .page-container {
+    flex-direction: column;
+  }
+  app-left-col {
+    display: none;
+  }
+
+  app-site-layout {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .left-col-joined {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .left-col-joined {
+    width: 100%;
+    display: none;
+  }
+}

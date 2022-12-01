@@ -1,0 +1,79 @@
+.search {
+  background-color: #000;
+  margin: 0 18px;
+  position: relative;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 14px 80px 14px 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #888;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+a {
+  display: inline-block;
+  padding: 9px 9px;
+  /* border: 1px solid #fff; */
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.for-tablets-down {
+  display: none;
+}
+
+/* Big tablets to 1200px (widths smaller then 1140px row)*/
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets from 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small phones to small tablets from 481px - 767px */
+@media only screen and (max-width: 767px) {
+  .search {
+    position: absolute;
+    z-index: 90;
+    right: 2px;
+    top: 100%;
+    border: 1px solid #fff;
+    max-width: 326px;
+    max-height: 43.333px;
+    opacity: 1;
+    transition: 0.5s;
+    transition-property: max-height, max-width, opacity;
+  }
+
+  .search.none {
+    position: absolute;
+    z-index: 90;
+    right: 2px;
+    bottom: -49px;
+    max-height: 0px;
+    max-width: 0px;
+    overflow: hidden;
+    border: none;
+    opacity: 0;
+  }
+
+  .for-tablets-down {
+    display: block;
+    padding: 13px 29px;
+  }
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
+}

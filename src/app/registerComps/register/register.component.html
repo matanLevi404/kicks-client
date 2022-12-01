@@ -1,0 +1,143 @@
+<div class="register">
+  <h1 class="page-title">Register Account</h1>
+  <p>
+    If you already have an account with us, please login at the
+    <a href="" routerLink="/login">Login page.</a>
+  </p>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend>Your Personal Details</legend>
+      <div class="form-group required">
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          formControlName="firstname"
+          id=""
+          placeholder="First Name"
+        />
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['firstname'].touched || submmited) && reactiveForm.controls['firstname'].errors?.['required']"
+        >
+          First name is required !
+        </div>
+      </div>
+
+      <div class="form-group required">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          formControlName="lastname"
+          id=""
+          placeholder="Last Name"
+        />
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['lastname'].touched || submmited) && reactiveForm.controls['lastname'].errors?.['required']"
+        >
+          Last name is required !
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="email">E-mail</label>
+        <input type="text" formControlName="email" id="" placeholder="E-mail" />
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['email'].touched || submmited) && reactiveForm.controls['email'].errors?.['required']"
+        >
+          Email is required !
+        </div>
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['email'].touched || submmited) && reactiveForm.controls['email'].errors?.['email']"
+        >
+          This must be email type input 'Test@test.co.il' !
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="telephone">Telephone</label>
+        <input
+          type="text"
+          formControlName="telephone"
+          id=""
+          placeholder="Telephone"
+        />
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['telephone'].touched || submmited) && reactiveForm.controls['telephone'].errors?.['required']"
+        >
+          Telephone is required !
+        </div>
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['telephone'].touched || submmited) && reactiveForm.controls['telephone'].errors?.['pattern']"
+        >
+          Valid patterns '1234567899', '123-456-7899', '123 456 7899'
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Password</legend>
+      <div class="form-group required">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          id=""
+          placeholder="Password"
+        />
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['password'].touched || submmited) && reactiveForm.controls['password'].errors?.['required']"
+        >
+          Password is required !
+        </div>
+      </div>
+      <div class="form-group required">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          id=""
+          placeholder="Confirm Password"
+        />
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['confirmPassword'].touched || submmited) && reactiveForm.controls['confirmPassword'].errors?.['required']"
+        >
+          Confirm Password is required !
+        </div>
+        <div
+          class="error"
+          *ngIf="(reactiveForm.controls['confirmPassword'].touched || submmited) && reactiveForm.controls['confirmPassword'].errors?.['passwordMismatch']"
+        >
+          Confirm Password and Password do not match !
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Newsletter</legend>
+      <div class="form-group-radio">
+        <label for="subscribe">Subscribe</label>
+        <div class="flex-align">
+          <div class="radio">
+            <label for="yes"> <input type="radio" />Yes</label>
+          </div>
+          <div class="radio">
+            <label for="no"> <input type="radio" />No</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="register-footer flex-align">
+      <span class="flex-align">
+        I have read and agree to the<a href="">Privacy Policy</a>
+        <input type="checkbox" />
+      </span>
+      <button type="submit" class="btn">Register</button>
+    </div>
+  </form>
+</div>

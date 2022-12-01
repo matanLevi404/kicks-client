@@ -1,0 +1,29 @@
+<div class="slider flex-align col-box" (mouseleave)="onMouseLeave()">
+  <div id="js-prev5" class="slide-btn flex-center">
+    <span class="material-symbols-outlined"> chevron_left </span>
+  </div>
+  <div id="js-next5" class="slide-btn flex-center">
+    <span class="material-symbols-outlined"> chevron_right </span>
+  </div>
+  <swiper
+    id="swiper-5"
+    #swiperSlider
+    [loop]="true"
+    [slidesPerView]="1"
+    [pagination]="{
+      clickable: true
+    }"
+    [navigation]="{
+      nextEl: '#js-next5',
+      prevEl: '#js-prev5'
+    }"
+    [scrollbar]="{ draggable: true }"
+  >
+    <ng-template swiperSlide
+      ><img src="/assets/images/img-1.jpg" alt=""
+    /></ng-template>
+    <ng-template swiperSlide
+      ><img src="/assets/images/img-2.jpg" alt=""
+    /></ng-template>
+  </swiper>
+</div>

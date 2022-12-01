@@ -1,0 +1,80 @@
+<div class="top-products products-section">
+  <div class="box-heading flex-center-between">
+    <span>Top Products</span>
+    <div class="swipe-nav-box">
+      <div id="js-prev1" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_left </span>
+      </div>
+      <div id="js-next1" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_right </span>
+      </div>
+    </div>
+  </div>
+
+  <swiper
+    class="clearfix"
+    id="swiper-1"
+    #swiperSlider
+    [slidesPerView]="3"
+    [breakpoints]="{
+      '0': {
+        slidesPerView: 1
+      },
+      '456': { slidesPerView: 2 },
+      '800': { slidesPerView: 3 },
+      '1050': { slidesPerView: 4 }
+    }"
+    [grid]="{ rows: 2 }"
+    [navigation]="{
+      nextEl: '#js-next1',
+      prevEl: '#js-prev1'
+    }"
+    [scrollbar]="{ draggable: true }"
+    class="mySwiper"
+  >
+    <ng-template *ngFor="let doubleProd of products; let i = index" swiperSlide>
+      <div class="double-prod">
+        <app-prod-card
+          *ngFor="let product of doubleProd"
+          [product]="product"
+        ></app-prod-card>
+      </div>
+    </ng-template>
+    <!-- <ng-template swiperSlide>
+      <div class="double-prod">
+        <app-prod-card></app-prod-card>
+        <app-prod-card></app-prod-card>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="double-prod">
+        <app-prod-card></app-prod-card>
+        <app-prod-card></app-prod-card>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="double-prod">
+        <app-prod-card></app-prod-card>
+        <app-prod-card></app-prod-card>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="double-prod">
+        <app-prod-card></app-prod-card>
+        <app-prod-card></app-prod-card>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="double-prod">
+        <app-prod-card></app-prod-card>
+        <app-prod-card></app-prod-card>
+      </div>
+    </ng-template>
+    <ng-template swiperSlide>
+      <div class="double-prod">
+        <app-prod-card></app-prod-card>
+        <app-prod-card></app-prod-card>
+      </div>
+    </ng-template> -->
+  </swiper>
+</div>

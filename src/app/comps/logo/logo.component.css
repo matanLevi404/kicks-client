@@ -1,0 +1,36 @@
+.logo-container {
+  /* margin: 0 15px; */
+  display: flex;
+  align-items: center;
+}
+
+.logo-name {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-left: 7px;
+}
+
+/* Big tablets to 1200px (widths smaller then 1140px row)*/
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets from 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small phones to small tablets from 481px - 767px */
+@media only screen and (max-width: 767px) {
+  .logo-img {
+    max-height: 45px;
+  }
+
+  .logo-name {
+    font-size: 30px;
+  }
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
+}

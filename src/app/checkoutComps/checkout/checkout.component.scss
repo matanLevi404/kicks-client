@@ -1,0 +1,203 @@
+:host {
+  ::ng-deep {
+    .mat-stepper-vertical {
+      margin: 0 !important;
+    }
+    .mat-step {
+      margin-bottom: 20px;
+    }
+
+    .mat-vertical-stepper-header {
+      padding: 10px 10px !important;
+      border: 1px solid #e5e5e5;
+      background-color: #f7f7f7;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0.5px;
+    }
+
+    #label {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #arrow {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      color: #808080;
+      transform: translateY(-50%) rotate(180deg);
+      transition: 0.3s;
+    }
+
+    mat-step-header[aria-selected="true"] #arrow {
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    mat-step-header[aria-selected="true"] + .mat-vertical-content-container {
+      border-left: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      border-right: 1px solid #e5e5e5;
+      margin: 0 !important;
+    }
+
+    .mat-stepper-vertical-line::before {
+      display: none;
+    }
+
+    .mat-vertical-content {
+      padding: 0;
+    }
+
+    .mat-step-icon {
+      display: none;
+    }
+  }
+}
+
+h1 {
+  color: #000000;
+  text-transform: capitalize;
+  font: 500 20px/26px "Roboto", sans-serif;
+  margin-bottom: 15px;
+}
+
+.mat-stepper-vertical {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+.mat-vertical-content {
+  border: 1px solid !important;
+}
+
+.cols {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.col {
+  width: 50%;
+}
+
+.form-group,
+.form-group-radio {
+  // margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  padding: 5px;
+}
+
+.form-group {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.form-group-radio {
+  align-items: center;
+}
+
+.form-group-radio {
+  font-weight: 500;
+}
+
+.form-group label {
+  padding: 7px 0px;
+  width: 200px;
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  // margin: 0 15px;
+  padding: 6px 12px;
+  flex-grow: 1;
+  display: block;
+  height: 40px;
+  font-size: 14px;
+  color: #222222;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.credit-card {
+  padding: 15px;
+}
+
+.date-cvv {
+  flex-direction: row;
+}
+
+.error {
+  margin: 5px 0px 0px 0px;
+}
+
+/* required - before element */
+.required label::before {
+  content: "*";
+  color: #f00;
+  font-weight: bold;
+  padding: 2px 4px;
+}
+/* required - before element */
+
+.btn-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 20px;
+}
+
+.btn {
+  padding: 8px 20px;
+  margin: 0px 0px 0px 20px;
+}
+
+iframe {
+  width: 100%;
+  height: 843px;
+  transform: scale(1);
+}
+
+iframe {
+  // position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Big tablets to 1200px (widths smaller then 1140px row)*/
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets from 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small phones to small tablets from 481px - 767px */
+@media only screen and (max-width: 767px) {
+  .cols {
+    flex-direction: column;
+  }
+
+  .col {
+    width: 100%;
+  }
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
+}

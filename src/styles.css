@@ -1,0 +1,390 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  background-color: #f7f7f7;
+}
+
+.page-row {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+
+.flex-justify {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.box-heading {
+  color: #fff;
+  width: 100%;
+  height: 51px;
+  font: 500 16px/23px "Roboto", sans-serif;
+  letter-spacing: 0.6px;
+  padding: 13px 20px;
+  position: relative;
+}
+
+.tooltip::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #343434;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  padding: 6px 8px;
+  top: -42px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s opacity;
+}
+
+.tooltip::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #343434;
+  top: -11px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+
+/* Button styling */
+.btn {
+  padding: 10px 20px 8px 60px;
+  font-size: 14px;
+  position: relative;
+  border: none;
+  color: #fff;
+  background-color: #d40317;
+  height: auto;
+  line-height: 22px;
+  margin: 0 auto;
+  display: block;
+  transition: 0.3s;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.btn span {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #b30213;
+  top: 0;
+  left: 0;
+  font-weight: 200;
+  transition: 0.3s;
+}
+
+.btn:hover,
+.btn:hover > span {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+/* Button styling */
+
+/* Products - Section */
+.products-section {
+  overflow-x: hidden;
+  padding: 15px 0;
+}
+
+.box-heading {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.nav-arrows span {
+  margin: 0 4px;
+  padding: 2px;
+  font-size: 19px;
+  border: 1px solid;
+}
+
+.nav-arrows span:hover {
+  color: #d40317;
+  cursor: pointer;
+}
+
+.prod-slider {
+  border: 1px solid #f2f2f2;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 400%;
+  padding: 20px;
+  transition: 0.3s all;
+}
+/* Products - Section */
+
+/* Footer - ul Style */
+.footer-links,
+.footer-links-img {
+  list-style: none;
+  color: #888;
+}
+
+.footer-title {
+  margin-bottom: 20px;
+  font: 500 18px/26px "Roboto", sans-serif;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.footer-title span.material-symbols-outlined {
+  display: none;
+}
+
+.footer-links li,
+.footer-links-img li {
+  line-height: 28px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #888888;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #d40317;
+}
+/* Footer - ul Style */
+
+/* Snackbar styling */
+.failed-snackbar,
+.success-snackbar {
+  margin: 0px !important;
+  min-width: 100vw !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 0px !important;
+  min-height: 80px !important;
+  background-color: #323232e9 !important;
+}
+
+.success-snackbar::before,
+.failed-snackbar::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 3px;
+  background-color: #ff1f3d;
+  align-self: flex-start;
+  animation: prograss 4.5s;
+}
+
+.success-snackbar::before {
+  background-color: #32ba7c;
+}
+
+.failed-snackbar::before {
+  background-color: #ff1f3d;
+}
+
+.error {
+  width: 100%;
+  color: red;
+  background-color: rgba(255, 0, 0, 0.201);
+  border: 1px solid red;
+  margin: 5px 15px 0px 15px;
+  padding: 0px 10px;
+}
+
+@keyframes prograss {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.failed-snackbar .mat-simple-snackbar,
+.success-snackbar .mat-simple-snackbar {
+  min-width: 50vw !important;
+}
+
+.failed-snackbar .mat-simple-snack-bar-content,
+.success-snackbar .mat-simple-snack-bar-content {
+  font-size: 14px !important;
+  font: "Roboto", sans-serif;
+  letter-spacing: 0.6px;
+  color: #fff;
+  font-weight: 500;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.failed-snackbar .mat-simple-snackbar::before,
+.success-snackbar .mat-simple-snackbar::before {
+  content: "";
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 32px;
+  height: 32px;
+  margin: 0 24px;
+  z-index: 99;
+  /* background-color: #d40317; */
+}
+
+.success-snackbar .mat-simple-snackbar::before {
+  background: url("assets/images/success.png");
+}
+
+.failed-snackbar .mat-simple-snackbar::before {
+  background: url("assets/images/stop.png");
+}
+
+.success-snackbar div button,
+.failed-snackbar div button {
+  color: #fff !important;
+}
+/* Snackbar styling */
+
+/* Scroll Bar Styling */
+
+/* width */
+.scroll-bar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+.scroll-bar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scroll-bar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Scroll Bar Styling */
+
+@media screen and (min-width: 1285px) {
+  .page-row {
+    width: 1280px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page-row {
+    width: 99%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .page-row {
+    width: 80%;
+  }
+
+  .footer-title {
+    margin: 0;
+  }
+
+  .footer-title span.material-symbols-outlined {
+    display: inline;
+  }
+
+  .footer-links {
+    transition: 0.5s all;
+    max-height: 0;
+    overflow-y: hidden;
+    opacity: 0;
+  }
+
+  .footer-links.open {
+    max-height: 650px;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .page-row {
+    width: 96%;
+  }
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
+  .page-row {
+    width: 100%;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

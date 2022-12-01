@@ -1,0 +1,17 @@
+<div class="returning-customer">
+  <h3>Returning Customer</h3>
+  <p>
+    <strong>I am returning customer</strong>
+  </p>
+  <div class="form-group">
+    <label for="email">E-mail Address</label>
+    <input #email type="email" />
+  </div>
+  <div class="form-group">
+    <label for="Password">Password</label>
+    <input #password type="password" />
+    <a href="">Frogotten Password</a>
+  </div>
+
+  <a class="btn" (click)="login(email.value, password.value)">Login</a>
+</div>

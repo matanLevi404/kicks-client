@@ -1,0 +1,51 @@
+<div class="box">
+  <div class="box-heading flex-align flex-justify-between">
+    <span>Big Deal</span>
+    <div class="swipe-nav-box">
+      <div id="js-prev3" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_left </span>
+      </div>
+      <div id="js-next3" class="flex-center">
+        <span class="material-symbols-outlined"> chevron_right </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <swiper
+      id="swiper-3"
+      #swiperSlider
+      [slidesPerView]="1"
+      [breakpoints]="{
+        '456': {
+          slidesPerView: 2
+        },
+        '1001': { slidesPerView: 1 }
+      }"
+      [navigation]="{
+        nextEl: '#js-next3',
+        prevEl: '#js-prev3'
+      }"
+      [scrollbar]="{ draggable: true }"
+    >
+      <ng-template *ngFor="let product of products" swiperSlide>
+        <app-prod-card [isLeft]="true" [product]="product"></app-prod-card>
+      </ng-template>
+      <!-- <ng-template swiperSlide
+        ><app-prod-card [isLeft]="true"></app-prod-card
+      ></ng-template>
+      <ng-template swiperSlide
+        ><app-prod-card [isLeft]="true"></app-prod-card
+      ></ng-template>
+      <ng-template swiperSlide
+        ><app-prod-card [isLeft]="true"></app-prod-card
+      ></ng-template>
+      <ng-template swiperSlide
+        ><app-prod-card [isLeft]="true"></app-prod-card
+      ></ng-template>
+      <ng-template swiperSlide
+        ><app-prod-card [isLeft]="true"></app-prod-card
+      ></ng-template> -->
+    </swiper>
+  </div>
+</div>

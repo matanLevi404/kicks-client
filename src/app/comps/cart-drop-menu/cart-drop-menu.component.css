@@ -1,0 +1,91 @@
+.dropDownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  top: 60px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  cursor: auto;
+  z-index: 99;
+  padding: 10px;
+  width: 350px;
+}
+
+.cart-table {
+  display: block;
+  max-height: 258px;
+  overflow-y: scroll;
+}
+
+.cart-table td {
+  padding: 5px 5px 0px 5px;
+}
+
+img,
+.name,
+.amount,
+.total {
+  padding: 5px 5px 0px 5px;
+}
+
+img {
+  width: 87px;
+  height: 71px;
+  border: 1px solid;
+}
+
+.sum {
+  position: relative;
+  padding: 15px 0px;
+}
+
+.sum::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: #000;
+  height: 1px;
+  top: 0;
+}
+
+.sum-headline {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.sum-headline span {
+  margin: 5px;
+}
+
+.buttons a {
+  padding: 8px 20px;
+}
+
+.view-cart {
+  background-color: #000;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.view-cart:hover {
+  background-color: #d40317;
+}
+
+.del {
+  background-color: #d9534f;
+  color: #fff;
+  padding: 6px 8px 6px 8px;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 3px;
+}
+
+.del:hover {
+  background-color: #d40317;
+}
+
+.del i {
+  font-size: 13px;
+}

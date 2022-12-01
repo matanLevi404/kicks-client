@@ -1,0 +1,11 @@
+<div class="top-products products-section">
+  <div class="box-heading flex-center-between">
+    <span>{{ catHeading }} Shoes</span>
+  </div>
+  <div class="try">
+    <app-prod-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-prod-card>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+.service-container {
+  padding: 23px 0;
+}
+
+.service {
+  width: 33.3%;
+  flex-direction: column;
+}
+
+.service:hover > .img-container img {
+  transform: translateY(-55px);
+}
+
+.service:hover > .service-heading {
+  color: #d40317;
+}
+
+.img-container {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.img-container img {
+  transition: 0.2s all;
+}
+
+.service img {
+  width: 55px;
+  height: 55px;
+  padding-bottom: 10px;
+}
+
+.service-heading {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  padding: 5px 0;
+  transition: 0.2s all;
+}
+
+.service-description {
+  line-height: 22px;
+  font-weight: 400;
+  color: #888888;
+}
+
+/* Big tablets to 1200px (widths smaller then 1140px row)*/
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets from 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small phones to small tablets from 481px - 767px */
+@media only screen and (max-width: 767px) {
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
+  .service-container {
+    flex-direction: column;
+  }
+
+  .service {
+    margin: 10px 0;
+    width: 100%;
+    font-size: 2.5vw;
+  }
+
+  .service-heading {
+    font-size: 3vw;
+    padding: 0;
+  }
+}
+
+/* Small phones from 0 - 410px */
+@media only screen and (max-width: 410px) {
+  .img-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service:hover > .img-container img {
+    transform: translateY(-40px);
+  }
+}

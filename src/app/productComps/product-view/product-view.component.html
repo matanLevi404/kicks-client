@@ -1,0 +1,80 @@
+<div class="product-view">
+  <div class="left-side">
+    <swiper
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      [spaceBetween]="10"
+      [navigation]="true"
+      [thumbs]="{ swiper: thumbsSwiper }"
+      class="mySwiper2"
+    >
+      <ng-template
+        swiperSlide
+        *ngFor="let img of (product | async)?.['images']"
+      >
+        <img [src]="img" alt="" />
+      </ng-template>
+    </swiper>
+    <swiper
+      (swiper)="thumbsSwiper = $event"
+      [spaceBetween]="10"
+      [slidesPerView]="3"
+      [freeMode]="true"
+      [watchSlidesProgress]="true"
+      class="mySwiper"
+    >
+      <ng-template
+        swiperSlide
+        *ngFor="let img of (product | async)?.['images']"
+      >
+        <img [src]="img" alt="" />
+      </ng-template>
+    </swiper>
+  </div>
+  <div class="right-side">
+    <h3>{{ (product | async)?.name }}</h3>
+    <div class="review">
+      <ul class="star-list flex-justify">
+        <li *ngFor="let rate of rating">
+          <span class="material-symbols-outlined" [ngClass]="{ mark: rate }">
+            star
+          </span>
+        </li>
+      </ul>
+
+      <span>1 review</span>
+      <span>Leave a review</span>
+    </div>
+
+    <div class="details">
+      <div>
+        Category: <span>{{ (product | async)?.["cat"] }}</span>
+      </div>
+      <div>
+        Product id: <span>{{ (product | async)?.["_id"].substr(0, 4) }}</span>
+      </div>
+      <div>Availability: <span>In Stock</span></div>
+    </div>
+
+    <div class="price">
+      <div>₪{{(product |async)?.['price']}}</div>
+      <div class="tax">Ex Tax: ₪0.00</div>
+    </div>
+
+    <div class="sizes">
+      <div
+        [ngClass]="{ chosen: mySize == size }"
+        class="size flex-center"
+        *ngFor="let size of sizes"
+        (click)="setSize(size)"
+      >
+        {{ size }}
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" (click)="pushToCart()">Add To Cart</button>
+      <span class="material-symbols-outlined"> favorite </span>
+      <span class="material-symbols-outlined"> zoom_out_map </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="footer-title flex-center-between" (click)="openFooterLinkUl()">
+  <span>Store Information</span>
+  <span *ngIf="!isOpen" class="material-symbols-outlined"> expand_more </span>
+  <span *ngIf="isOpen" class="material-symbols-outlined"> expand_less </span>
+</div>
+<ul class="footer-links" [ngClass]="{ open: isOpen }">
+  <li>
+    <div class="icon">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+    <span
+      >K'IKS - Shoes Store <br />
+      United States</span
+    >
+  </li>
+  <li>
+    <div class="icon">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+    <span>000-000-000</span>
+  </li>
+  <li>
+    <div class="icon">
+      <i class="fa-regular fa-envelope"></i>
+    </div>
+    <span>sales@yourcompany.com</span>
+  </li>
+</ul>

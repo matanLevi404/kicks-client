@@ -1,0 +1,34 @@
+.testi-box {
+  text-align: center;
+  padding: 15px 15px;
+}
+
+.testi-box * {
+  margin-bottom: 15px;
+}
+
+.testimonail-img {
+  border-radius: 50%;
+  border: 2px solid #d40317;
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+}
+
+.user-name {
+  color: #d40317;
+  font: 500 16px/26px "Roboto", sans-serif;
+  padding: 0;
+  display: block;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.desc {
+  line-height: 24px;
+  color: #808080;
+  position: relative;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+}

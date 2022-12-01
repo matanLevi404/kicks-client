@@ -1,0 +1,104 @@
+.banners-container {
+  padding: 15px 0;
+}
+
+.banner {
+  display: block;
+  position: relative;
+  width: 48.2%;
+  padding-bottom: 28.65%;
+  color: #000;
+  overflow: hidden;
+}
+
+.banner img {
+  position: absolute;
+  width: 100%;
+}
+
+.banner .banner-title-1,
+.banner .banner-title-2 {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+}
+
+.banner .banner-title-2 {
+  right: 0;
+}
+
+.banner-title-1 .offer {
+  color: #d40317;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+
+.banner-title-1 .details,
+.banner-title-2 .details {
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+}
+
+/* SHINE EFFECT */
+
+.banner::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 130%;
+  height: 100%;
+  z-index: 99;
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  top: 0;
+  bottom: 0;
+  transform: skew(-45deg);
+  left: -160%;
+  transition: 0.5s left;
+}
+
+.banner:hover::before {
+  left: 0%;
+}
+
+/* SHINE EFFECT */
+
+/* Big tablets to 1200px (widths smaller then 1140px row)*/
+@media only screen and (max-width: 1200px) {
+}
+
+/* Small tablets to big tablets from 767px - 1023px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Small phones to small tablets from 481px - 767px */
+@media only screen and (max-width: 767px) {
+}
+
+/* Small phones from 0 - 480px */
+@media only screen and (max-width: 480px) {
+  .banners-container {
+    flex-direction: column;
+  }
+
+  .banner {
+    width: 100%;
+    padding-bottom: 60%;
+    margin: 5px 0;
+  }
+
+  .banner-title-1 .details,
+  .banner-title-2 .details {
+    font-size: 15px;
+  }
+
+  .banner-title-1 .offer {
+    font-size: 13px;
+  }
+}

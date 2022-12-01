@@ -1,0 +1,16 @@
+<div class="search-container">
+  <div class="search flex-align" [ngClass]="{ none: !isInputOpen }">
+    <input type="text" placeholder="Search Products Here" />
+    <a
+      class="for-tablets-up"
+      href=""
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+    >
+      <img [src]="this.hover ? searchRedSrc : searchSrc" alt="" />
+    </a>
+  </div>
+  <a class="for-tablets-down" (click)="openSearchInput()">
+    <img [src]="isInputOpen ? closeInputSrc : searchSrc" alt="" />
+  </a>
+</div>

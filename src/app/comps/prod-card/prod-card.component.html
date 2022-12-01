@@ -1,0 +1,39 @@
+<li class="prod-card" (click)="goToProduct(productId)">
+  <div class="container">
+    <img [src]="product.images[0]" alt="" />
+
+    <div class="ul-container">
+      <ul
+        class="star-list flex-justify"
+        [ngClass]="{ 'star-list-hover': !isLeft }"
+      >
+        <li *ngFor="let rate of rating">
+          <span class="material-symbols-outlined" [ngClass]="{ mark: rate }">
+            star
+          </span>
+        </li>
+      </ul>
+      <ul *ngIf="!isLeft" class="button-group flex-center">
+        <li class="flex-center wish tooltip">
+          <span class="material-symbols-outlined"> favorite </span>
+        </li>
+        <li class="flex-center eye tooltip">
+          <span class="material-symbols-outlined"> visibility </span>
+        </li>
+        <li class="flex-center compare tooltip">
+          <span class="material-symbols-outlined"> zoom_out_map </span>
+        </li>
+        <li class="flex-center cart tooltip" (click)="pushToCart(productId)">
+          <span class="material-symbols-outlined"> shopping_cart </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="name">{{ product.name }}</div>
+    <div class="price">₪{{ product.price }}</div>
+    <button *ngIf="isLeft" class="btn" (click)="pushToCart(productId)">
+      Add To Cart
+      <span class="material-symbols-outlined flex-center"> shopping_cart </span>
+    </button>
+  </div>
+</li>

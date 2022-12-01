@@ -1,0 +1,36 @@
+.dropDownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  top: 60px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 10px 0;
+  cursor: auto;
+  z-index: 99;
+}
+
+.dropDownMenu li a {
+  width: 250px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: #666;
+  transition: 0.3s all;
+}
+
+.dropDownMenu li a:hover {
+  color: #d40317;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.dropDownMenu li .logout {
+  color: #d40317;
+  background-color: #d403183e;
+}
+
+.dropDownMenu li .logout:hover {
+  background-color: #d403187d;
+}

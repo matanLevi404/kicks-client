@@ -1,0 +1,36 @@
+.box {
+  margin-bottom: 30px;
+  border: 1px solid #f7f7f7;
+}
+
+.box-heading {
+  background-color: #000;
+  color: #fff;
+}
+
+.link-group {
+  width: 100%;
+  padding: 15px;
+  list-style: none;
+}
+
+.link-group li {
+  padding: 5px 0;
+  line-height: 26px;
+}
+
+.link-group li:hover {
+  cursor: pointer;
+}
+
+.link-group li:hover > a {
+  color: #d40317;
+}
+
+.link-group li a {
+  text-decoration: none;
+  color: #777;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: 0.2s;
+}

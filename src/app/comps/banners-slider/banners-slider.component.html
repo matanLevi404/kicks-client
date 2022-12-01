@@ -1,0 +1,62 @@
+<div
+  class="banners-slider"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <swiper
+    id="swiper-6"
+    #swiperSlider
+    [slidesPerView]="5"
+    [breakpoints]="{
+      '0': {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      '640': {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      '768': {
+        slidesPerView: 4,
+        spaceBetween: 40
+      },
+      '1024': {
+        slidesPerView: 5,
+        spaceBetween: 50
+      }
+    }"
+    [navigation]="true"
+    [scrollbar]="{ draggable: true }"
+  >
+    <ng-template swiperSlide
+      ><img src="/assets/images/banner-1.png" alt=""
+    /></ng-template>
+    <ng-template swiperSlide>
+      <img src="/assets/images/banner-2.png" alt="" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="/assets/images/banner-3.png" alt="" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="/assets/images/banner-4.png" alt="" />
+    </ng-template>
+    <ng-template swiperSlide
+      ><img src="/assets/images/banner-5.png" alt=""
+    /></ng-template>
+    <ng-template swiperSlide
+      ><img src="/assets/images/banner-1.png" alt=""
+    /></ng-template>
+    <ng-template swiperSlide>
+      <img src="/assets/images/banner-2.png" alt="" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="/assets/images/banner-3.png" alt="" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="/assets/images/banner-4.png" alt="" />
+    </ng-template>
+    <ng-template swiperSlide
+      ><img src="/assets/images/banner-5.png" alt=""
+    /></ng-template>
+  </swiper>
+</div>

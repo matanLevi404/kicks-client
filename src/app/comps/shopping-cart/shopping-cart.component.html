@@ -1,0 +1,20 @@
+<a
+  class="flex-align"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+  (click)="toggleMenu()"
+>
+  <img
+    class="avatar"
+    [src]="this.hover ? cartSrc : cartRedSrc"
+    alt="avatar-img"
+  />
+  <div class="divider"></div>
+  <div class="span-container">
+    <span [style.color]="this.hover ? '#D40317' : '#fff'">Shopping Cart</span>
+    <span [style.color]="'#888'"
+      >{{(cart | async)?.['cart'].length ?? "0"}} items - ₪{{((cart | async)?.['total']).toFixed(2) ?? "0.00"}}</span
+    >
+  </div>
+  <app-cart-drop-menu *ngIf="this.isOpen"></app-cart-drop-menu>
+</a>

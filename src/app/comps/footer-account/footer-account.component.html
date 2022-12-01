@@ -1,0 +1,12 @@
+<div class="footer-title flex-center-between" (click)="openFooterLinkUl()">
+  <span>My Account</span>
+  <span *ngIf="!isOpen" class="material-symbols-outlined"> expand_more </span>
+  <span *ngIf="isOpen" class="material-symbols-outlined"> expand_less </span>
+</div>
+<ul class="footer-links" [ngClass]="{ open: isOpen }">
+  <li><a href="">My Account</a></li>
+  <li><a href="">Order History</a></li>
+  <li><a href="">Wish List</a></li>
+  <li><a href="">Newsletter</a></li>
+  <li><a href="">Returns</a></li>
+</ul>

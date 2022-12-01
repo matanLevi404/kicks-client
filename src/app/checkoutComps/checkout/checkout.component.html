@@ -1,0 +1,286 @@
+<h1>Checkout</h1>
+
+<mat-stepper orientation="vertical" [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" (ngSubmit)="onFirstSubmit()">
+      <ng-template matStepLabel class="flex-align"
+        ><span id="label">Step 1: Fill out your name</span
+        ><span id="arrow" class="material-symbols-outlined">
+          arrow_drop_down
+        </span></ng-template
+      >
+      <div class="cols">
+        <div class="col first-col">
+          <div class="form-group required">
+            <label for="firstname">First Name</label>
+            <input
+              type="text"
+              formControlName="firstname"
+              id=""
+              placeholder="First Name"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['firstname'].touched || firstSubmitted) && firstFormGroup.controls['firstname'].errors?.['required']"
+            >
+              First name is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="lastname">Last Name</label>
+            <input
+              type="text"
+              formControlName="lastname"
+              id=""
+              placeholder="Last Name"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['lastname'].touched || firstSubmitted) && firstFormGroup.controls['lastname'].errors?.['required']"
+            >
+              Last name is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="email">E-mail</label>
+            <input
+              type="text"
+              formControlName="email"
+              id=""
+              placeholder="E-mail"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['email'].touched || firstSubmitted) && firstFormGroup.controls['email'].errors?.['required']"
+            >
+              Email is required !
+            </div>
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['email'].touched || firstSubmitted) && firstFormGroup.controls['email'].errors?.['email']"
+            >
+              This must be email type input 'Test@test.co.il' !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="telephone">Telephone</label>
+            <input
+              type="text"
+              formControlName="telephone"
+              id=""
+              placeholder="Telephone"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['telephone'].touched || firstSubmitted) && firstFormGroup.controls['telephone'].errors?.['required']"
+            >
+              Telephone is required !
+            </div>
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['telephone'].touched || firstSubmitted) && firstFormGroup.controls['telephone'].errors?.['pattern']"
+            >
+              Valid patterns '1234567899', '123-456-7899', '123 456 7899'
+            </div>
+          </div>
+        </div>
+
+        <div class="col second-col">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" name="" id="" placeholder="Compnay" />
+          </div>
+          <div class="form-group required">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              formControlName="address"
+              id=""
+              placeholder="Address"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['address'].touched || firstSubmitted) && firstFormGroup.controls['address'].errors?.['required']"
+            >
+              Address is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="city">City</label>
+            <input
+              type="text"
+              formControlName="city"
+              id=""
+              placeholder="City"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['city'].touched || firstSubmitted) && firstFormGroup.controls['city'].errors?.['required']"
+            >
+              City is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="postcode">Post Code</label>
+            <input
+              type="text"
+              formControlName="postcode"
+              id=""
+              placeholder="Post Code"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['postcode'].touched || firstSubmitted) && firstFormGroup.controls['postcode'].errors?.['required']"
+            >
+              Post Code is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              formControlName="country"
+              id=""
+              placeholder="Country"
+            />
+            <div
+              class="error"
+              *ngIf="(firstFormGroup.controls['country'].touched || firstSubmitted) && firstFormGroup.controls['country'].errors?.['required']"
+            >
+              Country is required !
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button class="btn" type="submit" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <button class="btn" (click)="checkout()">Safe Url</button>
+    <form [formGroup]="secondFormGroup" (ngSubmit)="onSecondSubmit()">
+      <ng-template matStepLabel class="flex-align"
+        ><span id="label">Step 2: Billing Details</span
+        ><span id="arrow" class="material-symbols-outlined">
+          arrow_drop_down
+        </span></ng-template
+      >
+
+      <div class="credit-card">
+        <div class="form-group required">
+          <label for="number">Credit Card Number</label>
+          <input
+            type="text"
+            formControlName="number"
+            id=""
+            placeholder="1234-1234-1234-1234"
+          />
+          <div
+            class="error"
+            *ngIf="(secondFormGroup.controls['number'].touched || secondSubmitted) && secondFormGroup.controls['number'].errors?.['required']"
+          >
+            Credit card number is required !
+          </div>
+        </div>
+        <div class="flex-align date-cvv">
+          <div class="form-group required">
+            <label for="expired">MM</label>
+            <select formControlName="mm" id="">
+              <option *ngFor="let month of monthList" value="month">
+                {{ month }}
+              </option>
+            </select>
+            <div
+              class="error"
+              *ngIf="(secondFormGroup.controls['mm'].touched || secondSubmitted) && secondFormGroup.controls['mm'].errors?.['required']"
+            >
+              Month is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="expired">YY</label>
+            <input
+              formControlName="yy"
+              type="number"
+              step="1"
+              min="2022"
+              max="2099"
+              value="2022"
+              placeholder="YY"
+            />
+            <div
+              class="error"
+              *ngIf="(secondFormGroup.controls['yy'].touched || secondSubmitted) && secondFormGroup.controls['yy'].errors?.['required']"
+            >
+              Year is required !
+            </div>
+          </div>
+          <div class="form-group required">
+            <label for="cvv">CVV</label>
+            <input type="text" formControlName="cvv" id="" placeholder="000" />
+            <div
+              class="error"
+              *ngIf="(secondFormGroup.controls['cvv'].touched || secondSubmitted) && secondFormGroup.controls['cvv'].errors?.['required']"
+            >
+              CVV number is required !
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label for="holder">Card Holder</label>
+          <input
+            type="text"
+            formControlName="holder"
+            id=""
+            placeholder="Credit Card Holder ..."
+          />
+          <div
+            class="error"
+            *ngIf="(secondFormGroup.controls['holder'].touched || secondSubmitted) && secondFormGroup.controls['holder'].errors?.['required']"
+          >
+            Holder name is required !
+          </div>
+        </div>
+      </div>
+
+      <div class=""></div>
+
+      <div class="btn-container">
+        <button class="btn" matStepperPrevious>Back</button>
+        <button
+          *ngIf="this.secondFormGroup.valid"
+          class="btn"
+          type="submit"
+          matStepperNext
+        >
+          Place Order
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel class="flex-align"
+      ><span id="label">Step 3: Done :)</span
+      ><span id="arrow" class="material-symbols-outlined">
+        arrow_drop_down
+      </span></ng-template
+    >
+    <div class="last-step">
+      <div>Thanks For Shopping At K'ICK !</div>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae fuga
+        fugiat harum tenetur aliquid accusamus ullam doloribus id? Facere nam
+        autem, iste nisi modi in dignissimos quis suscipit itaque fuga?
+      </p>
+    </div>
+    <!-- <iframe src="/assets/invoice/invoice.html" frameborder="0"></iframe> -->
+
+    <div class="btn-container">
+      <button class="btn" (click)="downloadRecipt()">Download Recipt</button>
+      <button class="btn" routerLink="/">Continue Shopping</button>
+    </div>
+  </mat-step>
+</mat-stepper>

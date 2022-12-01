@@ -1,0 +1,9 @@
+.box {
+  margin-bottom: 30px;
+  border: 1px solid #f7f7f7;
+}
+
+.box-heading {
+  background-color: black;
+  color: #fff;
+}

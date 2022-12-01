@@ -1,0 +1,22 @@
+<a
+  class="my-account clicked flex-align"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+  (click)="dropMenu()"
+>
+  <img
+    class="avatar clicked"
+    [src]="this.hover ? avatarSrc : avatarRedSrc"
+    alt="avatar-img"
+  />
+  <div class="divider clicked"></div>
+  <div class="span-container clicked">
+    <span class="clicked" [style.color]="this.hover ? '#D40317' : '#fff'"
+      >My Account</span
+    >
+    <span class="clicked" [style.color]="'#888'">{{
+      (user | async)?.firstname ?? "Register - Login"
+    }}</span>
+  </div>
+  <app-account-drop-menu *ngIf="this.active"></app-account-drop-menu>
+</a>

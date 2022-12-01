@@ -1,0 +1,90 @@
+.nav {
+  background-color: #d40317;
+  position: relative;
+}
+
+.link-list {
+  list-style: none;
+}
+
+.link-list a {
+  display: inline-block;
+  text-decoration: none;
+  border-top: 2px solid #d40317;
+  color: #fff;
+  padding: 18px 0;
+  margin: 0 30px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: 0.3s all;
+}
+
+.link-list a:hover {
+  border-top: 2px solid #fff;
+  color: #000;
+}
+
+.hidden-link-list {
+  list-style: none;
+  border: 1px solid;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 51px;
+  padding: 2% 2%;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.hidden-link-list li a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #666;
+  letter-spacing: 0.6px;
+  width: 100%;
+  line-height: 26px;
+  transition: 0.3s all;
+}
+
+.hidden-link-list li a:hover {
+  color: #d40317;
+}
+
+.box-heading {
+  position: relative;
+  display: none;
+  background-color: #d40317;
+  color: #fff;
+}
+
+.box-heading span {
+  display: inline-block;
+  position: absolute;
+}
+
+.box-heading::before {
+  content: "\F0C9";
+  font-family: "FontAwesome";
+  font-size: 22px;
+  display: inline-block;
+  font-weight: 500;
+  padding-right: 12px;
+  margin-left: 1px;
+}
+
+.box-heading:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .link-list {
+    display: none;
+  }
+
+  .box-heading {
+    display: block;
+  }
+}

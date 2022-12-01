@@ -1,0 +1,23 @@
+li {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  color: #d40317;
+  height: 25px;
+  margin-top: 3px;
+  width: 28px;
+  padding-left: 2px;
+  display: inline-block;
+  position: relative;
+}
+
+.icon i {
+  position: absolute;
+  top: 3px;
+}
+
+.fa-envelope {
+  font-size: 18px;
+}
