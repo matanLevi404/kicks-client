@@ -15,7 +15,7 @@
       >My Account</span
     >
     <span class="clicked" [style.color]="'#888'">{{
-      user.firstname ? user.firstname : "Register - Login"
+      user?.firstname ?? "Register - Login"
     }}</span>
   </div>
   <app-account-drop-menu *ngIf="this.active"></app-account-drop-menu>
