@@ -22,7 +22,6 @@ export class ProductViewComponent implements OnInit, OnDestroy {
   product = this._homeService.product$;
 
   rating: boolean[] = [];
-  sizes: number[] = [];
 
   mySize: number;
   constructor(
@@ -39,11 +38,6 @@ export class ProductViewComponent implements OnInit, OnDestroy {
     for (let i = 0; i < 5; i++) {
       if (i < 5) this.rating.push(true);
       else this.rating.push(false);
-    }
-
-    for (let i = 36; i < 56; i++) {
-      this.sizes.push(i);
-      this.sizes.push(i + 0.5);
     }
   }
 

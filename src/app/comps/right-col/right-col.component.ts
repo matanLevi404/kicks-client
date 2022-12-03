@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
+import { HomeService } from 'src/app/services/home.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { environment } from 'src/environments/environment';
 import { Thumbs } from 'swiper';
@@ -11,9 +12,13 @@ import { Thumbs } from 'swiper';
   styleUrls: ['./right-col.component.css'],
 })
 export class RightColComponent implements OnInit {
-  constructor(private _snackbarService: SnackbarService) {}
+  constructor(
+    private _snackbarService: SnackbarService,
+    private _homeService: HomeService
+  ) {}
 
   ngOnInit(): void {
+    this._homeService.getProducts();
     this.refreshPageOnJWTexp();
   }
 
@@ -27,6 +32,7 @@ export class RightColComponent implements OnInit {
 
     setTimeout(() => {
       location.reload();
+      localStorage.setItem('jwt', '');
     }, timer);
   }
 }

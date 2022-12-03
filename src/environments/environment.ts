@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://kicks-server.onrender.com',
+  apiURL: 'http://localhost:1001',
   ANGULAR_APP_PUBLISHABLE_KEY:
     'pk_test_51M8K6zDb07Qcgu34NfxVkZRs9MxQhZtKacgkGsDTzveSA8Y3DVPlw3RTq9jInGRIEEOwih6GzmPohdDrFqdhRm6j00O6igSdSY',
 };

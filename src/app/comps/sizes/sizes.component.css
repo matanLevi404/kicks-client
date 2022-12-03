@@ -1,0 +1,28 @@
+.sizes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.size {
+  /* width: 50px;
+  height: 50px; */
+  border: 1px solid #777;
+  margin: 2px;
+  /* background-color: rgba(239, 239, 239, 0.344); */
+  background-color: rgba(239, 239, 239);
+
+  color: #292929;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.size:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #d40317;
+}
+
+.size.chosen {
+  color: #fff;
+  background-color: #d40317;
+}

@@ -31,14 +31,22 @@ export class FeaturedProductsComponent implements OnInit, OnDestroy {
 
   products: Product[] = [];
 
-  constructor(private _variablesService: VariablesService) {}
+  constructor(
+    private _homeService: HomeService,
+    private _variablesService: VariablesService
+  ) {}
 
   ngOnInit(): void {
-    this._variablesService.products$
+    this._homeService.products$
       .pipe(takeUntil(this.destroy$))
       .subscribe((products) => {
         this.products = products;
       });
+    // this._variablesService.products$
+    //   .pipe(takeUntil(this.destroy$))
+    //   .subscribe((products) => {
+    //     this.products = products;
+    //   });
   }
 
   ngOnDestroy(): void {

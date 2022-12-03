@@ -24,6 +24,12 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'categories/:cat_name', component: ProductsGridComponent },
+      { path: 'categories/search', component: ProductsGridComponent },
+      {
+        path: 'wishlist',
+        component: ProductsGridComponent,
+        canActivate: [AuthGuard],
+      },
       { path: 'contact', component: ContactComponent },
       { path: 'features', component: FeaturesComponent },
       { path: 'cart', component: MyCartComponent, canActivate: [AuthGuard] },

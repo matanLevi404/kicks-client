@@ -60,16 +60,7 @@
       <div class="tax">Ex Tax: ₪0.00</div>
     </div>
 
-    <div class="sizes">
-      <div
-        [ngClass]="{ chosen: mySize == size }"
-        class="size flex-center"
-        *ngFor="let size of sizes"
-        (click)="setSize(size)"
-      >
-        {{ size }}
-      </div>
-    </div>
+    <app-sizes [dim]="'50px'" (choosenSize)="setSize($event)"></app-sizes>
 
     <div class="actions">
       <button class="btn" (click)="pushToCart()">Add To Cart</button>

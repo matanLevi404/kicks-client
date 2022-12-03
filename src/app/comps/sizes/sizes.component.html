@@ -1,0 +1,11 @@
+<div class="sizes">
+  <div
+    [ngStyle]="{ width: dim, height: dim }"
+    [ngClass]="{ chosen: mySize == size }"
+    class="size flex-center"
+    *ngFor="let size of sizes"
+    (click)="setSize(size)"
+  >
+    {{ size }}
+  </div>
+</div>

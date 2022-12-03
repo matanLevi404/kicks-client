@@ -25,7 +25,7 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
   templateUrl: './big-deal.component.html',
   styleUrls: ['./big-deal.component.scss'],
 })
-export class BigDealComponent implements OnInit {
+export class BigDealComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject();
 
   @ViewChild('swiperSlider') swiperSlider: SwiperComponent;
@@ -33,12 +33,26 @@ export class BigDealComponent implements OnInit {
   config: SwiperOptions = {};
 
   products: Product[] = [];
-  constructor(private _variablesService: VariablesService) {}
+  constructor(
+    private _homeService: HomeService,
+    private _variablesService: VariablesService
+  ) {}
 
   ngOnInit(): void {
-    this._variablesService.products$.subscribe((products) => {
-      console.log(products);
-      this.products = products.filter((p) => p.bigDeal == true);
-    });
+    this._homeService.products$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((products) => {
+        this.products = products.filter((p) => p.bigDeal == true);
+      });
+    // this._variablesService.products$
+    //   .pipe(takeUntil(this.destroy$))
+    //   .subscribe((products) => {
+    //     console.log(products);
+    //     this.products = products.filter((p) => p.bigDeal == true);
+    //   });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
   }
 }

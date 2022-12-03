@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Product } from '../interfaces/interfaces';
 import { VariablesService } from '../variables/variables.service';
+import { SnackbarService } from './snackbar.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,10 @@ export class HomeService {
   products$ = this._products.asObservable();
   product$ = this._product.asObservable();
 
-  constructor(private _variablesService: VariablesService) {}
+  constructor(
+    private _variablesService: VariablesService,
+    private _snackbar: SnackbarService
+  ) {}
 
   // fetch all products
   async getProducts() {
@@ -53,6 +57,32 @@ export class HomeService {
       console.log(res);
       this._products.next(res.products);
       this._variablesService._products.next(res.products);
+    }
+  }
+
+  // fetch products by search
+  async getProductsBySearch(q: string) {
+    // return console.log(environment.apiURL + '/home/categories/search?q=' + q);
+    const res = await fetch(environment.apiURL + '/home/search?q=' + q, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await res.json();
+
+    if (data.err) {
+      this._snackbar.openSnackBar('Failed:' + data.err, 'failed-snackbar');
+    } else {
+      console.log(data);
+      if (data.products.length == 0)
+        this._snackbar.openSnackBar(
+          'Failed:' + 'No results for this search !',
+          'failed-snackbar'
+        );
+      this._products.next(data.products);
+      this._variablesService._products.next(data.products);
     }
   }
 

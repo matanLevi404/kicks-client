@@ -69,6 +69,9 @@ import { AuthGuard } from './guards/auth/auth.guard';
 import { ProductViewComponent } from './productComps/product-view/product-view.component';
 import { SuccessComponent } from './paymentViews/success/success.component';
 import { FailedComponent } from './paymentViews/failed/failed.component';
+import { SizesComponent } from './comps/sizes/sizes.component';
+import { WishlistService } from './services/wishlist.service';
+import { RateService } from './services/rate.service';
 
 @NgModule({
   declarations: [
@@ -119,6 +122,7 @@ import { FailedComponent } from './paymentViews/failed/failed.component';
     ProductViewComponent,
     SuccessComponent,
     FailedComponent,
+    SizesComponent,
   ],
   imports: [
     BrowserModule,
@@ -144,6 +148,8 @@ import { FailedComponent } from './paymentViews/failed/failed.component';
     HomeService,
     CartService,
     CheckoutService,
+    WishlistService,
+    RateService,
   ],
   bootstrap: [AppComponent],
 })

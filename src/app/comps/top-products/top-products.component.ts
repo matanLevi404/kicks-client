@@ -27,9 +27,7 @@ export class TopProductsComponent implements OnInit, OnDestroy {
   products: Product[][] = [];
 
   ngOnInit(): void {
-    this._homeService.getProducts();
-
-    this._variablesService.products$
+    this._homeService.products$
       .pipe(takeUntil(this.destroy$))
       .subscribe((products) => {
         for (let i = 1; i < products.length; i += 2) {
@@ -37,6 +35,14 @@ export class TopProductsComponent implements OnInit, OnDestroy {
           this.products.push(doubleProd);
         }
       });
+    // this._variablesService.products$
+    //   .pipe(takeUntil(this.destroy$))
+    //   .subscribe((products) => {
+    //     for (let i = 1; i < products.length; i += 2) {
+    //       const doubleProd = [products[i - 1], products[i]];
+    //       this.products.push(doubleProd);
+    //     }
+    //   });
   }
 
   ngOnDestroy(): void {

@@ -1,10 +1,12 @@
 import { OnInit, ViewEncapsulation } from '@angular/core';
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './services/auth.service';
 import { CartService } from './services/cart.service';
+import { HomeService } from './services/home.service';
+import { RateService } from './services/rate.service';
 
 @Component({
   selector: 'app-root',
@@ -12,16 +14,20 @@ import { CartService } from './services/cart.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  private destroy$ = new Subject();
   title = 'kicks-client';
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _router: Router,
     private _cartService: CartService,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _rateService: RateService,
+    private _homeService: HomeService
   ) {}
 
   ngOnInit() {
+    this._rateService.getRatinglist();
     // this._router.events
     //   .pipe(filter((event) => event instanceof NavigationEnd))
     //   .subscribe((event: NavigationEnd) => {

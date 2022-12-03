@@ -11,7 +11,9 @@ export class CartItemComponent implements OnInit {
 
   constructor(private _cartService: CartService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.item);
+  }
 
   push(id: string, size: number) {
     this._cartService.push(id, size);

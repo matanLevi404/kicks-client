@@ -4,7 +4,9 @@ import { ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RegisterBody, User } from '../interfaces/interfaces';
 import { CartService } from './cart.service';
+import { RateService } from './rate.service';
 import { SnackbarService } from './snackbar.service';
+import { WishlistService } from './wishlist.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +19,9 @@ export class AuthService {
   constructor(
     private _snackbar: SnackbarService,
     private _router: Router,
-    private _cartService: CartService
+    private _cartService: CartService,
+    private _wishlistService: WishlistService,
+    private _rateService: RateService
   ) {}
 
   failedMsg = 'Failed: ';
@@ -57,6 +61,8 @@ export class AuthService {
       res.firstname = 'Hello ' + res.firstname;
       this._user.next(res);
       this._cartService.getCart();
+      this._wishlistService.getWishlist();
+      this._rateService.getRatinglist();
       this._router.navigateByUrl('/');
     }
   }

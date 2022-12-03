@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 import { VariablesService } from 'src/app/variables/variables.service';
 
 @Component({
@@ -29,10 +30,12 @@ export class MyAccountComponent implements OnInit, OnDestroy {
 
   constructor(
     private _renderer: Renderer2,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _wishlistService: WishlistService
   ) {}
 
   ngOnInit(): void {
+    this._wishlistService.getWishlist();
     this._authService.getUser();
     this._authService.user$.pipe(takeUntil(this.destroy$)).subscribe((info) => {
       this.user = info;
