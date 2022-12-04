@@ -50,7 +50,8 @@
         Category: <span>{{ (product | async)?.["cat"] }}</span>
       </div>
       <div>
-        Product id: <span>{{ (product | async)?.["_id"].substr(0, 4) }}</span>
+        Product id:
+        <span>{{ (product | async)?.["_id"] }}</span>
       </div>
       <div>Availability: <span>In Stock</span></div>
     </div>
@@ -64,8 +65,8 @@
 
     <div class="actions">
       <button class="btn" (click)="pushToCart()">Add To Cart</button>
-      <span class="material-symbols-outlined"> favorite </span>
-      <span class="material-symbols-outlined"> zoom_out_map </span>
+      <!-- <span class="material-symbols-outlined"> favorite </span>
+      <span class="material-symbols-outlined"> zoom_out_map </span> -->
     </div>
   </div>
 </div>

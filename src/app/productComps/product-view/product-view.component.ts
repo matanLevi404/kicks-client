@@ -32,13 +32,14 @@ export class ProductViewComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
-      this._homeService.getProduct(params['id']);
+      this._homeService.getProduct(params['id']).then((p) => {
+        console.log(p['rating']);
+        for (let i = 0; i < 5; i++) {
+          if (i < p.rating) this.rating.push(true);
+          else this.rating.push(false);
+        }
+      });
     });
-
-    for (let i = 0; i < 5; i++) {
-      if (i < 5) this.rating.push(true);
-      else this.rating.push(false);
-    }
   }
 
   ngOnDestroy(): void {

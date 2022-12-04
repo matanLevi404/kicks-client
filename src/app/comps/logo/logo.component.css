@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.logo-container:hover {
+  cursor: pointer;
+}
+
 .logo-name {
   color: #fff;
   font-size: 40px;

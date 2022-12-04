@@ -4,7 +4,13 @@
   </div>
 
   <div class="inp-btn">
-    <input type="text" name="" id="" placeholder="Enter Your Email Address" />
-    <button>Subscribe</button>
+    <input
+      #inp
+      type="text"
+      name=""
+      id=""
+      placeholder="Enter Your Email Address"
+    />
+    <button (click)="subscribeMsg(inp)">Subscribe</button>
   </div>
 </div>
