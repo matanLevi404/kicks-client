@@ -12,6 +12,7 @@ export class VertiNavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   getProductsByCat(catName: string) {
+    window.scrollTo(0, 0);
     this._homeService.getProductsByCat(catName);
   }
 }

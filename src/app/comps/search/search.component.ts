@@ -41,10 +41,13 @@ export class SearchComponent implements OnInit {
     this.hover = false;
   }
 
-  openSearchInput() {
+  searchProducts() {
     const q = this.search.nativeElement.value;
     this._router.navigate(['/categories/search'], { queryParams: { q: q } });
     this._homeService.getProductsBySearch(q);
+  }
+
+  openSearchInput() {
     this.isInputOpen = !this.isInputOpen;
   }
 }
